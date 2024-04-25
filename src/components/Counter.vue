@@ -5,6 +5,7 @@ export default {
     name: 'CounterComponent',
     setup() {
         const count = ref(0);
+        const inputValue = ref('');
 
         const increment = () => {
             count.value++;
@@ -16,6 +17,7 @@ export default {
 
         return {
             count,
+            inputValue,
             increment,
             decrement
         };
@@ -29,8 +31,10 @@ export default {
         <button @click="decrement">-</button>
         <span>目标count:{{ count }}</span>
         <button @click="increment">+</button>
-        <input type="number" />
-        <button>设置</button>
+        <input type="number" :value="inputValue" @change="(e) => (inputValue = e.target.value)" />
+        <button @click="count = inputValue">设置</button>
+        <span>等效简写：</span>
+        <input type="number" v-model="inputValue" />
     </div>
 </template>
 
