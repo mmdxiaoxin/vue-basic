@@ -4,6 +4,7 @@ import Divider from '@/components/Divider.vue';
 import ListRendering from './components/ListRendering.vue';
 import EventBinding from './components/EventBinding.vue';
 import ConditionRendering from './components/ConditionRendering.vue';
+import CommentArea from './components/CommentArea/CommentArea.vue';
 </script>
 
 <template>
@@ -11,11 +12,10 @@ import ConditionRendering from './components/ConditionRendering.vue';
     <Divider />
     <ConditionRendering />
     <Divider />
-
-    <Divider />
     <EventBinding />
     <Counter />
     <Divider />
+    <CommentArea />
 </template>
 
 <style scoped></style>
